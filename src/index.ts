@@ -50,7 +50,7 @@
 import { reminderDB } from "./reminderdb";
 
 const reminder1 = reminderDB.createReminder(
-  "Buy groceries",
+  "Buy groceries", 
   new Date("2025-03-12")
 );
 const reminder2 = reminderDB.createReminder("Doctor's appointment", new Date());
