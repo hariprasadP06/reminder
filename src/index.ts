@@ -49,38 +49,30 @@
 
 import { reminderDB } from "./reminderdb";
 
-// ✅ Create reminders
 const reminder1 = reminderDB.createReminder(
   "Buy groceries",
   new Date("2025-03-12")
 );
 const reminder2 = reminderDB.createReminder("Doctor's appointment", new Date());
 
-// ✅ Display created reminders
 console.log("Created Reminders:");
 console.log(reminder1);
 console.log(reminder2);
 
-// ✅ Check if a reminder exists
 console.log("Exists:", reminderDB.exists(reminder1.id));
 
-// ✅ Mark reminder1 as completed
 reminderDB.markReminderAsCompleted(reminder1.id);
 console.log(`Reminder ${reminder1.id} marked as completed.`);
 
-// ✅ Get all reminders
 console.log("All Reminders:", reminderDB.getAllReminders());
 
-// ✅ Get completed reminders
 console.log(
   "Completed Reminders:",
   reminderDB.getAllRemindersMarkedAsCompleted()
 );
 
-// ✅ Get reminders due by today
 console.log("Reminders Due Today:", reminderDB.getAllRemindersDueByToday());
 
-// ✅ Update a reminder
 reminderDB.updateReminder(
   reminder1.id,
   "Buy groceries and medicine",
@@ -91,9 +83,7 @@ console.log(
   reminderDB.getReminder(reminder1.id)
 );
 
-// ✅ Remove a reminder
 reminderDB.removeReminder(reminder2.id);
 console.log(`Reminder ${reminder2.id} removed.`);
 
-// ✅ Display all reminders after removal
 console.log("All Reminders After Removal:", reminderDB.getAllReminders());

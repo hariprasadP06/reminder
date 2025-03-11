@@ -157,7 +157,7 @@ class Reminder {
   constructor(id: string, title: string, dueDate: Date) {
     this.id = id;
     this.title = title;
-    this.completed = false; // Default: Not completed
+    this.completed = false;
     this.dueDate = dueDate;
   }
 }
@@ -216,7 +216,7 @@ class ReminderDatabase {
 
   getAllRemindersDueByToday(): Reminder[] {
     const today = new Date();
-    today.setHours(0, 0, 0, 0); // Normalize to start of day
+    today.setHours(0, 0, 0, 0);
 
     return Array.from(this.reminders.values()).filter(
       (reminder) => reminder.dueDate <= today
@@ -238,5 +238,4 @@ class ReminderDatabase {
   }
 }
 
-// ✅ Export instance of ReminderDatabase
 export const reminderDB = new ReminderDatabase();
